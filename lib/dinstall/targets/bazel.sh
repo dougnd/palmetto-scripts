@@ -30,7 +30,7 @@ $INSTALL_DIR/stow/gcc/bin/gcc "\$@"
 EOF
     chmod +x tmpbin/gcc
 
-    git clone https://github.com/dougnd/bazel.git
+    git clone https://github.com/bazelbuild/bazel.git
     cd bazel
     PATH=$TMPDIR/tmpbin:$PATH ./compile.sh
 
