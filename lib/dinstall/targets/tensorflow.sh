@@ -39,9 +39,8 @@ EOF
     export PATH=$TMPDIR/tmpbin:$PATH
 
     echo "Getting tensorflow..."
-    git clone https://github.com/dougnd/tensorflow
+    git clone https://github.com/tensorflow/tensorflow
     cd tensorflow
-    git checkout r0.9
 
     echo "Configuring tensorflow..."
     export PYTHON_BIN_PATH=$TMPDIR/tmpbin/python
