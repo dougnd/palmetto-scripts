@@ -1,5 +1,5 @@
 #Added for Caffe
-module add cuda-toolkit/7.5.18 gcc/4.8.1
+module add cuda-toolkit/7.5.18 gcc/4.8.1 ffmpeg/2.4
 export ACLOCAL_PATH="$INSTALL_DIR/share/aclocal${ACLOCAL_PATH:+":$ACLOCAL_PATH"}"
 export PKG_CONFIG_PATH="$INSTALL_DIR/lib/pkgconfig${PKG_CONFIG_PATH:+":$PKG_CONFIG_PATH"}"
 export PATH="$INSTALL_DIR/bin:$PATH"
