@@ -149,8 +149,16 @@ uninstall () {
 }
 
 upgrade () {
-    uninstall $1
-    install $1
+    if ! is_installed_$1 ; then
+        echo "Error: package $1 is not installed!"
+        return
+    fi
+    if type -t upgrade_$1 &> /dev/null ; then
+        upgrade_$1
+    else
+        uninstall $1
+        install $1
+    fi
 }
 
 deploy () {
