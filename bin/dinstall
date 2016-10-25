@@ -149,6 +149,11 @@ uninstall () {
 }
 
 upgrade () {
+    if [ ! -f $INSTALL_DIR/stow/palmetto-scripts/lib/dinstall/targets/${1}.sh ]; then
+        echo "Error: package $1 does not exist!"
+        return
+    fi
+    source $INSTALL_DIR/stow/palmetto-scripts/lib/dinstall/targets/${1}.sh
     if ! is_installed_$1 ; then
         echo "Error: package $1 is not installed!"
         return
