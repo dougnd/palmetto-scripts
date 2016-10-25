@@ -19,3 +19,9 @@ install_vehicleTrackingPalmetto () {
     dostow vehicleTrackingPalmetto
 }
 
+upgrade_vehicleTrackingPalmetto () {
+    cd $INSTALL_DIR/stow/vehicleTrackingPalmetto
+    git pull
+    dostow vehicleTrackingPalmetto
+}
+
