@@ -2,6 +2,30 @@
 
 Some scripts and tools to help me manage my programs on the Palmetto Cluster
 
+## UPDATE:
+
+The palmetto team is now providing a tool called Singularity 
+(http://singularity.lbl.gov/) to support programs that
+require higher glibc versions than provided by palmetto (Tensorflow,Caffe, MXNET, etc). 
+To use singularity, you
+need to be part of the special Unix group "singularity". You will have to email
+the palmetto staff to be part of this unix group.
+
+Once you have become part of that group, you can try out the experimental tensorflow installation:
+
+```
+export MODULEPATH=/software/experimental:$MODULEPATH
+module add tensorflow/1.0
+```
+
+Then, just fire up Python and "import tensorflow".
+
+With singularity, there should be very little need for palmetto-scripts and you should probably disable/uninstall it (see below for instructions) as it may conflict.
+
+(Thanks to Ashwin Srinath for the information on this and the
+tensorflow module on palmetto)
+
+
 ## Installation:
 
 ### Initialization:
@@ -86,4 +110,13 @@ Options
 - `getGPULikeNode` gets a node without a GPU, but the same architecture (6 cores, 10GB, 6 hr)
 
 
+## Uninstall/Disable
+
+To disable palmetto scripts, comment out/remove the following lines from your ~/.bashrc file:
+```
+export INSTALL_DIR=/home/dndawso/usr/local
+source /home/dndawso/usr/local/stow/palmetto-scripts/env_vars.sh
+```
+
+To permently delete palmetto-scripts and everything it installed, remove the usr/local folder.
 
